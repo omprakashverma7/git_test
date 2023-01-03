@@ -36,8 +36,9 @@ begin
     close c;
 end;
 
-
+-- execute the procedure
 execute add_sal;
 
 
 select * from salary;
+
