@@ -42,4 +42,7 @@ execute add_sal;
 
 select * from salary;  --salary table
 
-
+create table emp_name (
+    FirstName varchar(20), 
+    LastName varchar(20)
+    );
