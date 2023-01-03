@@ -40,5 +40,6 @@ end;
 execute add_sal;
 
 
-select * from salary;
+select * from salary;  --salary table
+
 
