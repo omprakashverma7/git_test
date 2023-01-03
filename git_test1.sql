@@ -42,7 +42,30 @@ execute add_sal;
 
 select * from salary;  --salary table
 
-create table emp_name (
+--select * from employee;
+----------------------------------------------------------------------------
+create table employee_name (
     FirstName varchar(20), 
     LastName varchar(20)
     );
+--select * from employee_name;
+create or replace PROCEDURE employee_details 
+is  
+    cursor c is
+    select Firstname, lastname from employee;
+    res c%rowtype;
+    
+begin
+    open c;
+    loop
+    fetch c into res;
+    exit when c%notfound;
+    insert into employee_name values (res.firstname, res.lastname);
+    end loop;
+    close c;
+end;
+
+
+execute employee_details;
+
+select * from employee_name;
